@@ -6,7 +6,7 @@
     "url": "https://raw.githubusercontent.com/rosieneville1/rosieneville1.github.io/main/Duke5_11.csv"
   },
   "transform": [
-    {"calculate": "datum['InstalledCapacity (MW)']", "as": "capacity"}
+    {"calculate": "datum['InstalledCapacity (MW)']", "as": "Installed Capacity"}
   ],
   "projection": {
     "type": "albers"
