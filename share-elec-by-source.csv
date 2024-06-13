@@ -1,4 +1,4 @@
-Entity,Code,Year,Coal - % electricity,Gas - % electricity,Hydro - % electricity,Solar - % electricity,Wind - % electricity,Oil - % electricity,Nuclear - % electricity,Other renewables excluding bioenergy - % electricity,Bioenergy - % electricity
+Entity,Code,Year,CoalPc,GasPc,HydroPc,SolarPc,WindPc,OilPc,NuclearPc,OtherRenewPc,BioenergyPc
 ASEAN (Ember),,2000,20.08135,43.385014,13.325058,0,0,17.186552,0,4.47162,1.5504081
 ASEAN (Ember),,2001,21.306656,47.032234,13.419785,0,0,12.594788,0,4.050883,1.5956527
 ASEAN (Ember),,2002,21.567904,48.22826,12.301762,0,0,12.539533,0,3.834345,1.5281978
