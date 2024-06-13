@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/RDeconomist/observatory/main/N10_C1.csv"
+  },
+  "mark": "bar",
+  "width": 400,
+  "height": 300,
+  "encoding": {
+    "y": {"field": "Activity", "sort": "-x", "type": "ordinal", "title": null},
+    "x": {
+      "field": "Value",
+      "title": "Expenditure (£ million)",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Type",
+      "type": "nominal",
+      "legend": {"orient": "bottom-right"},
+      "scale": {
+        "domain": [
+          "External operating",
+          "In-house operating",
+          "End-of-pipe",
+          "Integrated capital",
+          "Disposables"
+        ],
+        "range": ["#f4c245", "#00a767", "#179fdb", "#36b7b4", "#122b39"]
+      },
+      "title": null
+    },
+    "tooltip": [
+      {"field": "Activity", "type": "nominal"},
+      {
+        "field": "Value",
+        "type": "quantitative",
+        "title": "Expenditure (£ million)"
+      },
+      {"field": "Type"}
+    ]
+  }
+}
