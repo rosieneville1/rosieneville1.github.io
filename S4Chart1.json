@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/rosieneville1/rosieneville1.github.io/main/Duke5_11.csv"
+  },
+  "transform": [
+    {"calculate": "datum['InstalledCapacity (MW)']", "as": "capacity"}
+  ],
+  "projection": {
+    "type": "albers"
+  },
+  "mark": "circle",
+  "encoding": {
+    "longitude": {
+      "field": "X-Coordinate",
+      "type": "quantitative"
+    },
+    "latitude": {
+      "field": "Y-Coordinate",
+      "type": "quantitative"
+    },
+    "size": {"field": "capacity", "type": "quantitative"},
+    "color": {"field": "Primary Fuel", "type": "nominal"},
+    "tooltip": [
+      {"field": "Company Name", "type": "nominal"},
+      {"field": "Site Name", "type": "nominal"},
+      {"field": "Technology", "type": "nominal"},
+      {"field": "InstalledCapacity (MW)", "type": "quantitative"},
+      {"field": "Year Commissioned", "type": "quantitative"}
+    ]
+  }
+}
