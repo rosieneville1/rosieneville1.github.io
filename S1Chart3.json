@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": {
+    "text":"Nuclear Power GBR",
+    "subtitle": ["Output, GWh", "Source: OIEA via ECO-API"]
+  },
+
+  "width": 500,
+  "height": 400,
+
+  "data": {"url": "https://api.economicsobservatory.com/gbr/nGwh?vega"},
+
+  "mark": "line",
+
+  "encoding": {
+    "x": {"field": "date", "type": "temporal"},
+    "y": {"field": "value", "type": "quantitative", "title":null}
+  }
+}
