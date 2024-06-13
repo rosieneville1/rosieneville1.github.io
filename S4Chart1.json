@@ -8,21 +8,13 @@
   "transform": [
     {"calculate": "datum['InstalledCapacity (MW)']", "as": "capacity"}
   ],
-  "projection": {
-    "type": "albers"
-  },
+  "projection": {"type": "albers"},
   "mark": "circle",
   "encoding": {
-    "longitude": {
-      "field": "X-Coordinate",
-      "type": "quantitative"
-    },
-    "latitude": {
-      "field": "Y-Coordinate",
-      "type": "quantitative"
-    },
+    "longitude": {"field": "X-Coordinate", "type": "quantitative"},
+    "latitude": {"field": "Y-Coordinate", "type": "quantitative"},
     "size": {"field": "capacity", "type": "quantitative"},
-    "color": {"field": "Primary Fuel", "type": "nominal"},
+    "color": {"field": "Technology", "type": "nominal"},
     "tooltip": [
       {"field": "Company Name", "type": "nominal"},
       {"field": "Site Name", "type": "nominal"},
