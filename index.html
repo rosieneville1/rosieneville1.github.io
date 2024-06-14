@@ -78,9 +78,11 @@
             <div class="chart-description"> <!-- we are grouping the title and description together so we can style them together -->
                 <h2>Section 3: Another Chart</h2>
                 <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                    This is a another advanced chart. We'll cover charts like this in more detail later today. Don't worry if you don't understand it yet.
-                    Feel free to replace both charts with your own examples.
+                    This chart provides shows the verified emissions from the top 6 installations in the ETS in Wales, alongside data from all other participants (AOP). 
+                    The data is integrated directly within the code, rather than being sourced from a CSV file or an API. 
+                    You can access the data through <a href="https://reports.view-emissions-trading-registry.service.gov.uk/ets-reports.html" target="_blank">the UK ETS Public Reports</a>. 
                 </p>
+                
             </div>
             <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
         </section>
@@ -89,8 +91,7 @@
             <div class="chart-description"> <!-- we are grouping the title and description together so we can style them together -->
                 <h2>Section 4: Welsh Power Capacity - mapISH</h2>
                 <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                    This is a another advanced chart. We'll cover charts like this in more detail later today. Don't worry if you don't understand it yet.
-                    Feel free to replace both charts with your own examples.
+                    This is a another advanced chart. Currently, its a disembodied GeoMap of Wales, showing Welsh generating capacity. Hopefully I'll work out how to put an Welsh map underneath!
                 </p>
             </div>
             <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
@@ -105,8 +106,8 @@
 
         var figure_1_spec = "S1Chart3.json"; // Nuc Power
         var figure_2_spec = "S3Chart1.json"; //Power Gen
-        var figure_3_spec = "S2Chart1.json"; // ?
-        var figure_4_spec = "S4Chart1.json"
+        var figure_3_spec = "S4Chart3.json"; // ETS Wales
+        var figure_4_spec = "S4Chart1.json" // Geo Wales - 
 
         vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
         vegaEmbed('#Location2', figure_2_spec)
