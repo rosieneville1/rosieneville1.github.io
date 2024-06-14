@@ -1,0 +1,190 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Value of Installations over Years",
+  "data": {
+    "values": [
+      {
+        "Installation": "Aberthaw Cement Plant",
+        "UK ETS Account holder name": "Tarmac Cement and Lime Limited",
+        "Broad sector": "Industry",
+        "Subsector": "Cement",
+        "Year": 2021,
+        "Value": 346236.00
+      },
+      {
+        "Installation": "Aberthaw Cement Plant",
+        "UK ETS Account holder name": "Tarmac Cement and Lime Limited",
+        "Broad sector": "Industry",
+        "Subsector": "Cement",
+        "Year": 2022,
+        "Value": 358090.00
+      },
+      {
+        "Installation": "Aberthaw Cement Plant",
+        "UK ETS Account holder name": "Tarmac Cement and Lime Limited",
+        "Broad sector": "Industry",
+        "Subsector": "Cement",
+        "Year": 2023,
+        "Value": 284212.00
+      },
+      {
+        "Installation": "Port Talbot Steelworks",
+        "UK ETS Account holder name": "Tata Steel UK Limited",
+        "Broad sector": "Industry",
+        "Subsector": "Iron & Steel",
+        "Year": 2021,
+        "Value": 6643839.00
+      },
+      {
+        "Installation": "Port Talbot Steelworks",
+        "UK ETS Account holder name": "Tata Steel UK Limited",
+        "Broad sector": "Industry",
+        "Subsector": "Iron & Steel",
+        "Year": 2022,
+        "Value": 5673654.00
+      },
+      {
+        "Installation": "Port Talbot Steelworks",
+        "UK ETS Account holder name": "Tata Steel UK Limited",
+        "Broad sector": "Industry",
+        "Subsector": "Iron & Steel",
+        "Year": 2023,
+        "Value": 5706594.00
+      },
+      {
+        "Installation": "Connahs Quay Power Station",
+        "UK ETS Account holder name": "Uniper UK Limited",
+        "Broad sector": "Power Station",
+        "Subsector": "Power - Gas",
+        "Year": 2021,
+        "Value": 1076178.00
+      },
+      {
+        "Installation": "Connahs Quay Power Station",
+        "UK ETS Account holder name": "Uniper UK Limited",
+        "Broad sector": "Power Station",
+        "Subsector": "Power - Gas",
+        "Year": 2022,
+        "Value": 1374027.00
+      },
+      {
+        "Installation": "Connahs Quay Power Station",
+        "UK ETS Account holder name": "Uniper UK Limited",
+        "Broad sector": "Power Station",
+        "Subsector": "Power - Gas",
+        "Year": 2023,
+        "Value": 783793.00
+      },
+      {
+        "Installation": "Pembroke Power Station",
+        "UK ETS Account holder name": "RWE Generation UK plc",
+        "Broad sector": "Power Station",
+        "Subsector": "Power - Gas",
+        "Year": 2021,
+        "Value": 4993364.00
+      },
+      {
+        "Installation": "Pembroke Power Station",
+        "UK ETS Account holder name": "RWE Generation UK plc",
+        "Broad sector": "Power Station",
+        "Subsector": "Power - Gas",
+        "Year": 2022,
+        "Value": 5300997.00
+      },
+      {
+        "Installation": "Pembroke Power Station",
+        "UK ETS Account holder name": "RWE Generation UK plc",
+        "Broad sector": "Power Station",
+        "Subsector": "Power - Gas",
+        "Year": 2023,
+        "Value": 3998646.00
+      },
+      {
+        "Installation": "Valero, Pembroke",
+        "UK ETS Account holder name": "Valero Energy Ltd",
+        "Broad sector": "Industry",
+        "Subsector": "Refining",
+        "Year": 2021,
+        "Value": 1583183.00
+      },
+      {
+        "Installation": "Valero, Pembroke",
+        "UK ETS Account holder name": "Valero Energy Ltd",
+        "Broad sector": "Industry",
+        "Subsector": "Refining",
+        "Year": 2022,
+        "Value": 2389437.00
+      },
+      {
+        "Installation": "Valero, Pembroke",
+        "UK ETS Account holder name": "Valero Energy Ltd",
+        "Broad sector": "Industry",
+        "Subsector": "Refining",
+        "Year": 2023,
+        "Value": 2337923.00
+      },
+      {
+        "Installation": "Padeswood Works",
+        "UK ETS Account holder name": "Hanson",
+        "Broad sector": "Industry",
+        "Subsector": "Cement",
+        "Year": 2021,
+        "Value": 534888.00
+      },
+      {
+        "Installation": "Padeswood Works",
+        "UK ETS Account holder name": "Hanson",
+        "Broad sector": "Industry",
+        "Subsector": "Cement",
+        "Year": 2022,
+        "Value": 496271.00
+      },
+      {
+        "Installation": "Padeswood Works",
+        "UK ETS Account holder name": "Hanson",
+        "Broad sector": "Industry",
+        "Subsector": "Cement",
+        "Year": 2023,
+        "Value": 359676.00
+      },
+      {
+        "Installation": "AOP",
+        "UK ETS Account holder name": "",
+        "Broad sector": "",
+        "Subsector": "",
+        "Year": 2021,
+        "Value": 1409468.00
+      },
+      {
+        "Installation": "AOP",
+        "UK ETS Account holder name": "",
+        "Broad sector": "",
+        "Subsector": "",
+        "Year": 2022,
+        "Value": 1512909.00
+      },
+      {
+        "Installation": "AOP",
+        "UK ETS Account holder name": "",
+        "Broad sector": "",
+        "Subsector": "",
+        "Year": 2023,
+        "Value": 1246578.00
+      }
+    ]
+  },
+  "transform": [
+    {"calculate": "datum.Year == 2021 ? '2021' : datum.Year == 2022 ? '2022' : '2023'", "as": "YearLabel"}
+  ],
+  "facet": {
+    "column": {"field": "YearLabel", "type": "ordinal", "header": {"title": "Year"}}
+  },
+  "spec": {
+    "mark": {"type": "bar", "tooltip": true},
+    "encoding": {
+      "x": {"field": "Installation", "type": "nominal", "title": "Installation"},
+      "y": {"field": "Value", "type": "quantitative", "title": "Value"},
+      "color": {"field": "Installation", "type": "nominal", "scale": {"scheme": "category10"}, "title": "Installation"}
+    }
+  }
+}
