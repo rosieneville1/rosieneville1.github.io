@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Electricity Generation Share by Source",
+  "data": {
+    "url": "https://raw.githubusercontent.com/rosieneville1/rosieneville1.github.io/main/share-elec-by-source.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "transform": [
+    {
+      "filter": {"field": "Entity", "oneOf": ["World", "United Kingdom"]}
+    },
+    {
+      "filter": {"field": "Entity", "selection": "entity"}
+    },
+    {
+      "fold": ["CoalPc", "GasPc", "HydroPc", "SolarPc", "WindPc", "OilPc", "NuclearPc", "OtherRenewPc", "BioenergyPc"],
+      "as": ["source", "percentage"]
+    }
+  ],
+  "mark": {"type": "line", "tooltip": true},
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "temporal",
+      "axis": {"title": "Year"}
+    },
+    "y": {
+      "field": "percentage",
+      "type": "quantitative",
+      "axis": {"title": "Percentage of Electricity Generation"}
+    },
+    "color": {
+      "field": "source",
+      "type": "nominal",
+      "title": "Energy Source"
+    },
+    "tooltip": [
+      {"field": "Entity", "title": "Entity"},
+      {"field": "Year", "title": "Year"},
+      {"field": "source", "title": "Energy Source"},
+      {"field": "percentage", "title": "Percentage", "format": ".2f"}
+    ]
+  },
+  "selection": {
+    "entity": {
+      "type": "single",
+      "fields": ["Entity"],
+      "init": {"Entity": "World"},
+      "bind": {
+        "input": "select",
+        "options": ["World", "United Kingdom"],
+        "name": "Entity:"
+      }
+    }
+  }
+}
